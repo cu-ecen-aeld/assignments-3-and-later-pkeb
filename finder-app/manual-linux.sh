@@ -64,7 +64,6 @@ then
 git clone git://busybox.net/busybox.git
     cd busybox
     git checkout ${BUSYBOX_VERSION}
-    # TODO:  Configure busybox
 else
     cd busybox
 fi
@@ -103,6 +102,7 @@ make CROSS_COMPILE=$CROSS_COMPILE
 cp writer "${OUTDIR}/rootfs/home"
 cp finder.sh "${OUTDIR}/rootfs/home"
 cp finder-test.sh "${OUTDIR}/rootfs/home"
+cp autorun-qemu.sh "${OUTDIR}/rootfs/home"
 cp -r ../conf "${OUTDIR}/rootfs/"
 ln -s -r "${OUTDIR}/rootfs/conf" "${OUTDIR}/rootfs/home/conf"
 
