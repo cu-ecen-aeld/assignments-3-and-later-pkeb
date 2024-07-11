@@ -1,5 +1,9 @@
 
-CC=$(CROSS_COMPILE)gcc
+ifdef $(TARGET_CC)
+	CC=$(TARGET_CC)
+else
+	CC=$(CROSS_COMPILE)gcc
+endif
 
 all: writer
 
